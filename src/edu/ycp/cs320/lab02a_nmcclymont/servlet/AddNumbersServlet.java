@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import edu.ycp.cs320.lab02a_nmcclymont.controller.NumbersController;
+import edu.ycp.cs320.lab02a_nmcclymont.controller.AddNumbersController;
 
 public class AddNumbersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -50,7 +50,7 @@ public class AddNumbersServlet extends HttpServlet {
 			// the view does not alter data, only controller methods should be used for that
 			// thus, always call a controller method to operate on the data
 			else {
-				NumbersController controller = new NumbersController();
+				AddNumbersController controller = new AddNumbersController();
 				result = controller.add(first, second, third);
 			}
 		} catch (NumberFormatException e) {

@@ -18,4 +18,23 @@ public class IndexServlet extends HttpServlet {
 		
 		req.getRequestDispatcher("/_view/index.jsp").forward(req, resp);
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		
+		System.out.println("Index Servlet: doPost");
+		
+		// Determine which button was selected by the user and call for its
+		// respective jsp
+		if (req.getParameter("addNumbers") != null) {
+			req.getRequestDispatcher("/_view/addNumbers.jsp").forward(req, resp);
+		} else if (req.getParameter("multiplyNumbers") != null) {
+			req.getRequestDispatcher("/_view/multiplyNumbers.jsp").forward(req, resp);
+		} else if (req.getParameter("guessingGame") != null) {
+			req.getRequestDispatcher("/_view/guessingGame.jsp").forward(req, resp);
+		} else {
+			throw new ServletException("Unknown command");
+		}
+	}
 }

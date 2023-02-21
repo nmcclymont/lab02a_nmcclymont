@@ -6,6 +6,12 @@
 	</head>
 
 	<body>
-		This is the index view jsp
+		<form action="${pageContext.servletContext.contextPath}/index" method="post">
+			<div>
+				<input type="submit" name="addNumbers" value="Add Numbers">
+				<input type="submit" name="multiplyNumbers" value="Multiply Numbers">
+				<input type="submit" name="guessingGame" value="Guessing Game">
+			</div>
+		</form>
 	</body>
 </html>
